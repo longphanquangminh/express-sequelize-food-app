@@ -6,44 +6,39 @@ const model = initModels(sequelize);
 
 export const postOrder = async (req, res) => {
   try {
-    const { user_id, res_id, amount } = req.body;
+    const { user_id, food_id, amount, code, arr_sub_id } = req.body;
     const user = await model.users.findOne({ where: { user_id } });
     if (!user) {
       responseData(res, "Người dùng không tồn tại", "", 404);
       return;
     }
-    const restaurant = await model.restaurants.findOne({ where: { res_id } });
-    if (!restaurant) {
-      responseData(res, "Nhà hàng không tồn tại", "", 404);
-      return;
-    }
-    const checkUserRated = await model.rate_res.findOne({
-      where: {
-        user_id,
-        res_id,
-      },
-    });
-
-    if (checkUserRated) {
-      responseData(res, "Người dùng này đã rate nhà hàng!", "", 400);
+    const food = await model.foods.findOne({ where: { food_id } });
+    if (!food) {
+      responseData(res, "Món ăn không tồn tại", "", 404);
       return;
     }
 
-    if (amount < 0 || amount > 5) {
-      responseData(res, "Rating phải từ 0 đến 5", "", 400);
+    if (amount <= 0) {
+      responseData(res, "Số lượng thức ăn phải lớn hơn 0", "", 400);
+      return;
+    }
+
+    if (code == "") {
+      responseData(res, "Code không được bỏ trống!", "", 400);
       return;
     }
 
     const newData = {
       user_id,
-      res_id,
+      food_id,
       amount,
-      date_rate: new Date(),
+      code,
+      arr_sub_id,
     };
 
-    await model.rate_res.create(newData);
+    await model.orders.create(newData);
 
-    responseData(res, "Rate thành công", "", 200);
+    responseData(res, "Đặt món ăn thành công!", "", 200);
   } catch {
     responseData(res, "Lỗi ...", "", 500);
   }
