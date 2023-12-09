@@ -38,20 +38,22 @@ CREATE TABLE `like_res` (
   KEY `res_id` (`res_id`),
   CONSTRAINT `like_res_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `like_res_ibfk_2` FOREIGN KEY (`res_id`) REFERENCES `restaurants` (`res_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `food_id` int DEFAULT NULL,
   `amount` int DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
   `arr_sub_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`order_id`),
   KEY `user_id` (`user_id`),
   KEY `food_id` (`food_id`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`food_id`) REFERENCES `foods` (`food_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `rate_res`;
 CREATE TABLE `rate_res` (
@@ -65,7 +67,7 @@ CREATE TABLE `rate_res` (
   KEY `res_id` (`res_id`),
   CONSTRAINT `rate_res_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `rate_res_ibfk_2` FOREIGN KEY (`res_id`) REFERENCES `restaurants` (`res_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `restaurants`;
 CREATE TABLE `restaurants` (
@@ -131,11 +133,14 @@ INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_like`) VALUES
 (9, 6, 2, '2023-01-09'),
 (10, 3, 2, '2023-01-09');
 
-INSERT INTO `orders` (`user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
-(1, 1, 2, 'ORDER001', '1');
-INSERT INTO `orders` (`user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
-(2, 1, 2, 'ORDER002', '1');
-
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
+(1, 1, 1, 2, 'ORDER001', '1');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
+(2, 2, 1, 2, 'ORDER002', '1');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
+(3, 1, 1, 1, '1', '1');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `amount`, `code`, `arr_sub_id`) VALUES
+(4, 1, 1, 1, '1', '1');
 
 INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES
 (1, 1, 1, 5, '2023-01-01');
@@ -144,7 +149,8 @@ INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) V
 INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES
 (3, 1, 2, 3, '2023-01-03');
 INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES
-(4, 2, 2, 2, '2023-01-04');
+(4, 2, 2, 2, '2023-01-04'),
+(5, 1, 3, 5, '2023-12-09');
 
 INSERT INTO `restaurants` (`res_id`, `res_name`, `image`, `description`) VALUES
 (1, 'Sushi restaurant', 'sushi-restaurant.png', 'This is a sushi restaurant');
