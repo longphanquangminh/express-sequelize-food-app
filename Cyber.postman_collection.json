@@ -1,275 +1,215 @@
 {
-	"info": {
-		"_postman_id": "d2e7f614-17fc-471c-bffc-6b7d6aa8d553",
-		"name": "Cyber",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27257950"
-	},
-	"item": [
-		{
-			"name": "127.0.0.1:8080/order",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \"user_id\": 1, \"food_id\": 1, \"amount\": 1, \"code\": \"1\", \"arr_sub_id\": \"1\" }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "127.0.0.1:8080/order",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"order"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://airbnb.cybersoft.edu.vn/api/rooms",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Tokenbyclass",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCBTw6FuZyAwOCIsIkhldEhhblN0cmluZyI6IjIxLzAzLzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxMDk3OTIwMDAwMCIsIm5iZiI6MTY4NzE5NDAwMCwiZXhwIjoxNzExMTI2ODAwfQ.I9iDnvUJNQaG_RBPSODU3vvlNF0JJ7lRamr221wclIQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "https://airbnb.cybersoft.edu.vn/api/rooms",
-					"protocol": "https",
-					"host": [
-						"airbnb",
-						"cybersoft",
-						"edu",
-						"vn"
-					],
-					"path": [
-						"api",
-						"rooms"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "127.0.0.1:8080/like",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {},
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"res_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "127.0.0.1:8080/like",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"like"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://apicrm.cybersoft.edu.vn/api/nguoidung/login",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "tokenCybersoft",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCAwMSIsIkhldEhhblN0cmluZyI6IjMwLzA5LzIwMzEiLCJIZXRIYW5UaW1lIjoiMTk0ODQ5MjgwMDAwMCIsIm5iZiI6MTYwMTIyNjAwMCwiZXhwIjoxOTQ4NjQwNDAwfQ.4l-eTzlgVnFczfvc2Or7BNPOcaesY3Kwc8RoNm-o-6M",
-						"type": "default",
-						"disabled": true
-					},
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0MDEiLCJlbWFpbCI6ImhhbmRsZUxvZ291dGFAZy5jYyIsInJvbGUiOiJVU0VSIiwibmJmIjoxNjk5NzgxMjk3LCJleHAiOjE3MDAzODYwOTd9.IcTBzH5JRQu4MBCLOjrpT3Uoi_i25sZK4737QlmXl9o",
-						"type": "default",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"\",\r\n    \"facebookId\": \"1069190971096968\",\r\n    \"facebookEmail\": \"\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://apicrm.cybersoft.edu.vn/api/nguoidung/login",
-					"protocol": "https",
-					"host": [
-						"apicrm",
-						"cybersoft",
-						"edu",
-						"vn"
-					],
-					"path": [
-						"api",
-						"nguoidung",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.techx.edu.vn/api/nguoidung/facebook",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"facebookId\": \"2113181429016632\",\r\n  \"email\": \"\",\r\n  \"avatar\": \"\",\r\n  \"diachiIp\": \"\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://api.techx.edu.vn/api/nguoidung/facebook",
-					"protocol": "https",
-					"host": [
-						"api",
-						"techx",
-						"edu",
-						"vn"
-					],
-					"path": [
-						"api",
-						"nguoidung",
-						"facebook"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://jsonmock.hackerrank.com/api/ip?ip=2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://jsonmock.hackerrank.com/api/ip?ip=2",
-					"protocol": "https",
-					"host": [
-						"jsonmock",
-						"hackerrank",
-						"com"
-					],
-					"path": [
-						"api",
-						"ip"
-					],
-					"query": [
-						{
-							"key": "ip",
-							"value": "2"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "127.0.0.1:8080/review",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"res_id\": 3,\r\n    \"amount\": 5\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "127.0.0.1:8080/review",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"review"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "127.0.0.1:8080/order",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \"user_id\": 1, \"food_id\": 1, \"amount\": 1, \"code\": \"1\", \"arr_sub_id\": \"1\" }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "127.0.0.1:8080/order",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"order"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "swagger": "2.0",
+  "info": {
+    "_postman_id": "d2e7f614-17fc-471c-bffc-6b7d6aa8d553",
+    "name": "Cyber",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27257950"
+  },
+  "item": [
+    {
+      "name": "127.0.0.1:8080/order",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"user_id\": 1, \"food_id\": 1, \"amount\": 1, \"code\": \"1\", \"arr_sub_id\": \"1\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:8080/order",
+          "host": ["127", "0", "0", "1"],
+          "port": "8080",
+          "path": ["order"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://airbnb.cybersoft.edu.vn/api/rooms",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Tokenbyclass",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCBTw6FuZyAwOCIsIkhldEhhblN0cmluZyI6IjIxLzAzLzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxMDk3OTIwMDAwMCIsIm5iZiI6MTY4NzE5NDAwMCwiZXhwIjoxNzExMTI2ODAwfQ.I9iDnvUJNQaG_RBPSODU3vvlNF0JJ7lRamr221wclIQ",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "https://airbnb.cybersoft.edu.vn/api/rooms",
+          "protocol": "https",
+          "host": ["airbnb", "cybersoft", "edu", "vn"],
+          "path": ["api", "rooms"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "127.0.0.1:8080/like",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {},
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\": 1,\r\n    \"res_id\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:8080/like",
+          "host": ["127", "0", "0", "1"],
+          "port": "8080",
+          "path": ["like"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://apicrm.cybersoft.edu.vn/api/nguoidung/login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "tokenCybersoft",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCAwMSIsIkhldEhhblN0cmluZyI6IjMwLzA5LzIwMzEiLCJIZXRIYW5UaW1lIjoiMTk0ODQ5MjgwMDAwMCIsIm5iZiI6MTYwMTIyNjAwMCwiZXhwIjoxOTQ4NjQwNDAwfQ.4l-eTzlgVnFczfvc2Or7BNPOcaesY3Kwc8RoNm-o-6M",
+            "type": "default",
+            "disabled": true
+          },
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0MDEiLCJlbWFpbCI6ImhhbmRsZUxvZ291dGFAZy5jYyIsInJvbGUiOiJVU0VSIiwibmJmIjoxNjk5NzgxMjk3LCJleHAiOjE3MDAzODYwOTd9.IcTBzH5JRQu4MBCLOjrpT3Uoi_i25sZK4737QlmXl9o",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"\",\r\n    \"facebookId\": \"1069190971096968\",\r\n    \"facebookEmail\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://apicrm.cybersoft.edu.vn/api/nguoidung/login",
+          "protocol": "https",
+          "host": ["apicrm", "cybersoft", "edu", "vn"],
+          "path": ["api", "nguoidung", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://api.techx.edu.vn/api/nguoidung/facebook",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"facebookId\": \"2113181429016632\",\r\n  \"email\": \"\",\r\n  \"avatar\": \"\",\r\n  \"diachiIp\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.techx.edu.vn/api/nguoidung/facebook",
+          "protocol": "https",
+          "host": ["api", "techx", "edu", "vn"],
+          "path": ["api", "nguoidung", "facebook"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://jsonmock.hackerrank.com/api/ip?ip=2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonmock.hackerrank.com/api/ip?ip=2",
+          "protocol": "https",
+          "host": ["jsonmock", "hackerrank", "com"],
+          "path": ["api", "ip"],
+          "query": [
+            {
+              "key": "ip",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "127.0.0.1:8080/review",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\": 1,\r\n    \"res_id\": 3,\r\n    \"amount\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:8080/review",
+          "host": ["127", "0", "0", "1"],
+          "port": "8080",
+          "path": ["review"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "127.0.0.1:8080/order",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"user_id\": 1, \"food_id\": 1, \"amount\": 1, \"code\": \"1\", \"arr_sub_id\": \"1\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:8080/order",
+          "host": ["127", "0", "0", "1"],
+          "port": "8080",
+          "path": ["order"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
